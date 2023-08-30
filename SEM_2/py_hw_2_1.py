@@ -13,7 +13,6 @@ def my_fractions(frac_1, frac_2):
     prod_frac_num = num_1 * num_2
     prod_frac_denom = denom_1 * denom_2
     prod_frac = (prod_frac_num, prod_frac_denom)
-
     return sum_frac, prod_frac
 
 frac_1 = '2/7'

@@ -1,23 +1,19 @@
 # Создайте словарь со списком вещей для похода в качестве ключа и их массой в качестве значения. 
 # Определите какие вещи влезут в рюкзак передав его максимальную грузоподъёмность. 
 # Достаточно вернуть один допустимый вариант. *Верните все возможные варианты комплектации рюкзака.
+
 import random
 
-MAX_MASS = 6000
-
-def bagage():
-    sum_value = 0
-    print(f'эти вещи вошли в рюкзак: \n')
+def backpack(my_dict, max_mass):
+    things = []
     for key, value in my_dict.items():
-        value = random.sample(list(my_dict.values()), k=9)
-        sum_value += value
-        if sum_value < MAX_MASS:
-            # value = random.sample(list(my_dict.values()), k=9)
-        # sum_value += value
-        # print(sum_value, key, value)
-        # if sum_value < MAX_MASS:
-            print(f'{key} весом {value} грамм')
+        # value = random.choice(list(my_dict.values()))
+        if value <= max_mass:
+            things.append(key)
+            max_mass -= value
+    return things
 
+max_mass = 6000
 my_dict = {
         'тушенка': 300,
         'фонарь': 500,
@@ -30,7 +26,4 @@ my_dict = {
         'радиоприеник': 1000,
         }
 
-bagage()
-
-
-# print(f'все эти вещи вошли в рюкзак: {bagage}')
+print(backpack(my_dict, max_mass))

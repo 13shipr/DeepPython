@@ -11,5 +11,6 @@ def to_hex(num):
 
 num = 25534
 hex_str = to_hex(num)
+
 print(f"Шестнадцатеричное представление числа {num} -> 0x{hex_str}")
 print(f'Проверка -> {hex(num)}')
